@@ -1,0 +1,167 @@
+.ex-1-square {
+    transition: 2s;         /* Si imposta il tempo di comparsa relativo al background del primo quadrato */
+}
+.ex-1-square:hover {
+    background: red;        /* On hover il background relativo al primo quadrato diventa rosso */
+}
+.ex-2-square {
+    transition: 2s;         /* Si imposta il tempo in cui il secondo quadrato raggiungerà la width del 100% se on Active */
+}
+.ex-2-square:active {       /* Quando si preme con il mouse sul secondo quadrato, quest ultimo raggiungerà una width pari al 100% del suo contenitore */
+    width: 100%;
+}
+.ex-3-square {
+    transition: 1s;         /* Si imposta la durata dell'effetto relativo all'hover del terzo quadrato */
+}
+.ex-3-square:hover {
+    border-radius: 100%;    /* On hover il terzo quadrato diventa un cerchio, con una transizione dell'effetto pari ad 1 secondo */
+}
+.ex-4-square {
+    transition: 1s;         /* Si imposta la durata dell'effetto relativo all'hover del quarto quadrato */
+}
+.ex-4-square:hover {
+    opacity: 0;             /* On hover il quarto quadrato raggiungerà in 1s opacità 0 e quindi scomparirà */
+}
+.ex-5-square {
+    transition: 1s;         /* Si imposta la durata degli effetti relativi agli hover del quinto quadrato */
+}
+.ex-5-square:hover {
+    transform: scale(2);    /* On hover il quinto quadrato raggiungerà due volte la sua dimensione */
+}
+.ex-5-square:active {
+    transform: scale(.5);   /* On click il quinto quadrato raggiungerà la metà della sua dimensione */
+}
+.ex-6-img:hover {
+    filter: grayscale(1);   /* On hover verrà applicata alla prima immagine una scala di grigi */
+}
+.ex-7-img {
+    transition: 2s;         /* Si imposta il tempo di transizione dallo stato normale allo stato descritto all'interno dell'hover */
+}
+.ex-7-img:hover {
+    filter: grayscale(.6) sepia(.5);    /* Si applica all'immagine una scala di grigi e di seppia */
+}
+.ex-8-img {
+    transition: 2s;          /* Si imposta il tempo di transizione dallo stato normale allo stato descritto all'interno dell'hover */
+}
+.ex-8-img:hover {
+    filter: grayscale(.6) sepia(.5);    /* Si applica all'immagine una scala di grigi e di seppia, ed un border-radius pari a 20px */
+    border-radius: 20px;
+}
+.ex-9-img {
+    transition: 2s;          /* Si imposta il tempo di transizione dallo stato normale allo stato descritto all'interno dell'hover */
+}
+.ex-9-img:hover {
+    filter: grayscale(.6) sepia(.5);    /* Si applica all'immagine una scala di grigi e di seppia, un border-radius pari a 20px, ed un ingrandimento pari ad una volta e mezza la dimensione dell'immagine */
+    border-radius: 20px;
+    transform: scale(1.5);
+}
+.ex-10-icon {
+    animation: spin 1s linear infinite; /* Si applica all'icona una rotazione completa in 1 secondo, infinite volte. */
+}
+@keyframes spin {
+    0% {
+        transform: rotate(1turn);       /* Si specifica a spin che deve far ruotare l'icona per 360 gradi */
+    }
+}
+
+.ex-11-icon:hover {
+    animation: spinALittleBit 2s linear;    /* On hover si applica all'icona una rotazione della durata di 2 secondi, non infinita */
+}
+@keyframes spinALittleBit {             /* Si applica a spinALittleBit una rotazione che dall'inizio sino al 90% dei 2 secondi ruota fino a 315gradi, dopodichè torna a 0 */
+    0% {
+        transform: rotate(0);
+    }
+    90% {
+        transform: rotate(315deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+.ex-12-button:hover .ex-12-top-white {  /* On hover si imposta un'animazione relativa al div vuoto presente nella classe .ex-12-button, non infinita  */
+    animation: moveTopWhite 2s linear;
+}
+@keyframes moveTopWhite {   /* Si assegnano a moveTopWhite */
+    0% {
+        left: 10%;  /* In partenza lascia alla sua sinistra il 10% della width del suo contenitore */
+    }
+    50% {
+        left: calc(100% - 60px);    /* Entro un secondo dovrà raggiungere il 100% della width del suo contenitore ma vanno tolti i 60px relativi al 10% dello start */
+    }
+    100% {
+        left: 10%;  /* In fine torna alla posizione iniziale */
+    }
+}
+.ex-12-button:hover .ex-12-bottom-white {   /* On hover si imposta un'animazione relativa al div vuoto presente nella classe .ex-12-button, non infinita  */
+    animation: moveBottomWhite 2s linear;
+}
+@keyframes moveBottomWhite {    /* Stesso ragionamento del top-white */
+    0% {
+        right: 20%;
+    }
+    50% {
+        right: calc(100% - 60px);
+    }
+    100% {
+        right: 20%;
+    }
+}
+
+.ex-13-button:hover .ex-13-top-white {  
+    animation: moveTopWhiteCompletely 2s linear;
+}
+@keyframes moveTopWhiteCompletely {
+    0% {
+        left: 10%;
+        top: -10px;
+    }
+    30% {
+        left: calc(100% - 30px);
+        top: -10px;
+    }
+    45% {
+        left: calc(100% - 30px);
+        top: 100%;
+    }
+    75% {
+        left: 0;
+        top: 100%;
+    }
+    90% {
+        left: -15px;
+        top: -10px;
+    }
+    100% {
+        left: 10%;
+        top: -10px;
+    }
+}
+.ex-13-button:hover .ex-13-bottom-white {
+    animation: moveBottomWhiteCompletely 2s linear;
+}
+@keyframes moveBottomWhiteCompletely {
+    0% {
+        bottom: -10px;
+        right: 20%;
+    }
+    30% {
+        right: calc(100% - 30px);
+        bottom: -10px;
+    }
+    45% {
+        right: calc(100% - 30px);
+        bottom: 100%;
+    }
+    75% {
+        right: 0;
+        bottom: 100%;
+    }
+    90% {
+        right: -15px;
+        bottom: -10px;
+    }
+    100% {
+        bottom: -10px;
+        right: 20%;
+    }
+}
